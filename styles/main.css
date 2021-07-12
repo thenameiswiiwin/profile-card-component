@@ -1,0 +1,103 @@
+:root {
+	/* COLORS */
+	--clr-primary-100: hsl(185, 75%, 39%); /* Body background */
+	--clr-primary-200: hsl(227, 10%, 46%); /* Card__middle: age, location, description  */
+	--clr-primary-300: hsl(229, 23%, 23%); /* Card__middle: username */
+	--clr-neutral-100: hsl(0, 0%, 100%); /* Card: background, Card_middle: img border clr */
+	--clr-neutral-200: hsl(0, 0%, 82%); /* Card__middle: bottom border */
+	--clr-neutral-300: hsl(0, 0%, 59%); /* Card__middle: age/location,Figure: description */
+	--clr-shadow-900: 0 2rem 8rem rgba(0, 0, 0, 0.2); /* Card box shadow */
+
+	/* TYPOGRAPHY */
+	--fs-xs: 0.625rem; /* Figure: description */
+	--fs-base: 0.875rem; /* Body */
+	--fs-md: 1.125rem; /*Content: age */
+	--ff-primary: 'Kumbh Sans', sans-serif; /* Body */
+	--fw-base: 400; /* Body */
+	--fw-bold: 700; /* Card__middle: username, Figure: stat */
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: url('../images/bg-pattern-top.svg'), url('../images/bg-pattern-bottom.svg'),
+		var(--clr-primary-100);
+	background-repeat: no-repeat;
+	background-position: right calc(47vw + 15%) bottom calc(65vh - 15vw),
+		left calc(40vw + 25%) top calc(72vh - 10vw);
+	font-family: var(--ff-primary);
+	font-size: var(--fs-base);
+	line-height: 1.6;
+}
+
+.container {
+	margin-inline: auto;
+	width: min(90%, 21.93rem);
+}
+
+.card {
+	text-align: center;
+	border-radius: 1rem;
+	background-color: var(--clr-neutral-100);
+	box-shadow: var(--clr-shadow-900);
+	overflow: hidden;
+	color: var(--clr-neutral-300);
+}
+
+.card__middle {
+	border-bottom: 1px dotted var(--clr-neutral-200);
+	padding-bottom: 1rem;
+}
+
+.card__middle__img {
+	border-radius: 50%;
+	border: 0.5rem solid var(--clr-neutral-100);
+	margin-top: -4rem;
+}
+
+.card__middle__content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.card__middle__content--username {
+	color: var(--clr-primary-300);
+	font-size: var(--fs-md);
+}
+
+.card__middle__content--age {
+	font-size: var(--fs-md);
+}
+
+.card__bottom {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 1.75rem 0;
+}
+
+.card__bottom__stat {
+	color: var(--clr-primary-300);
+	font-size: var(--fs-md);
+}
+
+.card__bottom__description {
+	font-size: var(--fs-xs);
+	letter-spacing: 1px;
+}
